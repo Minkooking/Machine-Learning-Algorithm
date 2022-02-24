@@ -1,6 +1,10 @@
 Linear Regression
 ================
 
+``` r
+knitr::opts_chunk$set(fig.path="./figures/linear_regression/")
+```
+
 #### simple linear regression
 
 ``` r
@@ -15,7 +19,7 @@ y = -1 + 3 * x + rnorm(n, 0, 1)
 ggplot() + geom_point(aes(x, y))
 ```
 
-![](Linear-Regression_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+![](./figures/linear_regression/generated%20plot-1.png)<!-- -->
 
 #### estimate of true beta
 
@@ -37,7 +41,7 @@ ggplot() + geom_point(aes(x, y)) +
                       values = c('blue', 'red'))
 ```
 
-![](Linear-Regression_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](./figures/linear_regression/estimation-1.png)<!-- -->
 
 ``` r
 # R built-in function 
