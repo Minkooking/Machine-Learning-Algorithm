@@ -5,30 +5,13 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup, include=FALSE}
-library(knitr)
-opts_chunk$set(base.url='https://github.com/.../raw/.../')
-
-
-
-create_gitpath <- function(user, repo, branch = 'master'){
-   paste0(paste('https://github.com', user, repo, 'raw', branch, sep = '/'),'/')
-}
-
-my_repo <- create_gitpath('Minkooking',
-                          'Machine-Learning-Algorithm')
-
-knit.github <- function(..., git_url){
- old_url <- opts_knit$get('base.url')
- on.exit(opts_knit$set(base.url = old_url))
- opts_knit$set(base.url  = git_url)
- knit(..., envir = parent.frame())
-}
-
+```{r}
+knitr::opts_chunk$set(fig.path="./figures/linear_regression/")
 ```
 
+
 #### simple linear regression
-```{r message=FALSE, warning=FALSE}
+```{r generated plot, message=FALSE, warning=FALSE}
 library(ggplot2)
 library(dplyr)
 
@@ -42,7 +25,7 @@ ggplot() + geom_point(aes(x, y))
 
 
 #### estimate of true beta
-```{r}
+```{r estimation}
 X = cbind(1, x)
 (beta = solve(t(X) %*% X) %*% t(X) %*% y)
 
