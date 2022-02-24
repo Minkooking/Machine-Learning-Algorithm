@@ -34,7 +34,7 @@ ggplot() + geom_point(aes(x, y)) +
   geom_line(aes(x, X %*% beta, color = 'estimated'),
             lwd = 1.5) + 
   scale_color_manual(breaks = c('true','estimated'),
-                      values = c('green', 'red'))
+                      values = c('blue', 'red'))
 ```
 
 ![](Linear-Regression_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->

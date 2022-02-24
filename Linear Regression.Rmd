@@ -1,6 +1,6 @@
 ---
 title: "Linear Regression"
-output: html_document
+output: github_document
 editor_options: 
   chunk_output_type: console
 ---
@@ -33,8 +33,7 @@ ggplot() + geom_point(aes(x, y)) +
   geom_line(aes(x, X %*% beta, color = 'estimated'),
             lwd = 1.5) + 
   scale_color_manual(breaks = c('true','estimated'),
-                      values = c('green', 'red'))
-
+                      values = c('blue', 'red'))
 
 # R built-in function 
 lm(y~x)$coefficients
