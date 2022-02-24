@@ -6,7 +6,25 @@ editor_options:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+opts_chunk$set(base.url='https://github.com/.../raw/.../')
+
+
+
+create_gitpath <- function(user, repo, branch = 'master'){
+   paste0(paste('https://github.com', user, repo, 'raw', branch, sep = '/'),'/')
+}
+
+my_repo <- create_gitpath('Minkooking',
+                          'Machine-Learning-Algorithm')
+
+knit.github <- function(..., git_url){
+ old_url <- opts_knit$get('base.url')
+ on.exit(opts_knit$set(base.url = old_url))
+ opts_knit$set(base.url  = git_url)
+ knit(..., envir = parent.frame())
+}
+
 ```
 
 #### simple linear regression
